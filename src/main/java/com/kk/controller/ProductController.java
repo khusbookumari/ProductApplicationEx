@@ -61,7 +61,7 @@ public class ProductController {
 		return "redirect:/";
 	}
 	/*
-	 * Update the Product Detais
+	 * Update the Product Details
 	 */
 	@PostMapping("/update/save")
 	public String updateOrSaveProd(@ModelAttribute Product req,Model model)
