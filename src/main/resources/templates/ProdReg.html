@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>Product registration Page</title>
+</head>
+<body>
+	<h2>Register your Product Here</h2>
+	<h2> <a th:href="@{/}" style="text-decoration: none;">Home Page</a></h2>
+	<form th:action="@{/save}" method="post">
+	<pre>
+		Name :  <input type="text" name="prodName">
+		Price : <input type="text" name="prodPrice">
+		Vendor : VENDOR : 
+					<select name="prodVendor">
+							<option value="">-SELECT-</option>
+							<option value="NIT">DELL</option>
+							<option value="TEST">HP</option>
+							<option value="ORCL">ORCL</option>
+							<option value="ORCL">Lenevo</option>
+							<option value="ORCL">Test</option>
+					</select>
+		Notes : <textarea name="prodNote"></textarea>
+			<input type="submit" value="Reg Product"/>
+	</pre>
+	</form>
+	
+</body>
+</html>

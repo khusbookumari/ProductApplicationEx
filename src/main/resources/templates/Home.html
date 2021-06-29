@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>Home Page</title>
+</head>
+<body align="center">
+	<h1>Welcome to Home Page</h1>
+	<h2>
+		<a th:href="@{/reg}">Register Product</a>
+	</h2>
+
+	<h1>Product List</h1>
+	<table border="1" align="center">
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>PRICE</th>
+			<th>VENDOR</th>
+			<th>GST</th>
+			<th>DISCOUNT</th>
+			<th>NOTES</th>
+			<th>EDIT</th>
+			<th>DELETE</th>
+		</tr>
+		<tr th:each="ob:${list}">
+			<td th:text="${ob.id}"></td>
+			<td th:text="${ob.prodName}"></td>
+			<td th:text="${ob.prodPrice}"></td>
+			<td th:text="${ob.prodVendor}"></td>
+			<td th:text="${ob.prodGst}"></td>
+			<td th:text="${ob.prodDis}"></td>
+			<td th:text="${ob.prodNote}"></td>
+			<!-- 			<td><a th:href="@{/update?id=" th:text="${ob.id}}">EDIT IMG</a></td> -->
+			<!-- 			<td><a th:href="@{/delete?id=}">EDIT IMG</a></td> -->
+			<td><a th:href="@{/update/{id}(id=${ob.id})}">Edit</a></td>
+			<td><a th:href="@{/delete/{id}(id=${ob.id})}">Delete</a></td>
+		</tr>
+	</table>
+	<span th:text="${msg}"></span>
+</body>
+</html>
